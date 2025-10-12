@@ -4,58 +4,71 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Clonex!</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://i.ibb.co.com/CK6MW23R/07729e2524c6f0f5bfbac8375c1e46bc.png">
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#0b0d10;
-      --card:#0f1317;
-      --muted:#9aa3ad;
-      --accent:#00ffff;
-      --glass: rgba(255,255,255,0.03);
-      --radius:16px;
-      --max-width:700px;
-      --gap:18px;
+    :root {
+      --bg: #0b0d10;
+      --card: #0f1317;
+      --muted: #9aa3ad;
+      --accent: #00ffff;
+      --glass: rgba(255, 255, 255, 0.03);
+      --radius: 16px;
+      --max-width: 700px;
+      --gap: 18px;
       font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
+    * { box-sizing: border-box }
+    html, body { height: 100% }
+    body {
+      margin: 0;
       background: var(--bg);
-      color:#e6eef3;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:40px 18px;
+      color: #e6eef3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 18px;
     }
 
-    .container{
-      width:100%;
-      max-width:var(--max-width);
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
       background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:20px;
-      padding:28px;
-      box-shadow:0 6px 30px rgba(2,6,10,0.7);
-      border:1px solid rgba(255,255,255,0.03);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 6px 30px rgba(2,6,10,0.7);
+      border: 1px solid rgba(255,255,255,0.03);
     }
 
-    header{
-      display:flex;
-      align-items:center;
-      gap:16px;
-      margin-bottom:18px;
+    header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
     }
 
-    .logo{
-      width:64px;height:64px;border-radius:12px;overflow:hidden;
-      display:flex;align-items:center;justify-content:center;
+    .logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       animation: logoGlow 2s infinite alternate;
+      flex-shrink: 0;
     }
 
     .logo img {
-      width:100%;height:100%;object-fit:cover;border-radius:12px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 14px;
     }
 
     @keyframes logoGlow {
@@ -64,23 +77,35 @@
       100% { box-shadow: 0 0 8px rgba(0,255,255,0.3), 0 0 20px rgba(0,255,255,0.2) inset; }
     }
 
-    h1{font-size:22px;margin:0}
-    p.lead{margin:0;color:var(--muted);font-size:14px}
+    h1 { font-size: 22px; margin: 0 }
+    p.lead { margin: 0; color: var(--muted); font-size: 14px }
 
-    .social-row{
-      display:flex;gap:var(--gap);align-items:center;flex-wrap:wrap;margin:22px 0 28px;
+    .social-row {
+      display: flex;
+      gap: var(--gap);
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 22px 0 28px;
     }
 
-    .social-card{
-      display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--card);border-radius:12px;cursor:pointer;text-decoration:none;color:inherit;
-      transition:transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s, background .28s;
-      border:1px solid rgba(255,255,255,0.02);
-      min-width:170px;
+    .social-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: var(--card);
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      transition: transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s, background .28s;
+      border: 1px solid rgba(255,255,255,0.02);
+      min-width: 170px;
     }
 
-    .social-card:hover{
-      transform:translateY(-6px) scale(1.02);
-      box-shadow:0 0 12px rgba(255,255,255,0.7), 0 0 22px rgba(255,255,255,0.3);
+    .social-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 0 12px rgba(255,255,255,0.7), 0 0 22px rgba(255,255,255,0.3);
       animation: glowFade 1.8s infinite alternate;
     }
 
@@ -90,32 +115,113 @@
       100% { box-shadow: 0 0 8px rgba(255,255,255,0.3), 0 0 20px rgba(255,255,255,0.2) inset; }
     }
 
-    .social-icon{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;background:var(--glass);flex-shrink:0}
-    .social-name{font-weight:600}
-    .social-handle{font-size:12px;color:var(--muted)}
-
-    .about{
-      background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
-      padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);
-      color:var(--muted);font-size:14px;line-height:1.45;margin-bottom:18px
+    .social-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: var(--glass);
+      flex-shrink: 0;
     }
 
-    footer{display:flex;justify-content:space-between;align-items:center;gap:12px}
-    .copy{color:var(--muted);font-size:13px}
+    .social-name { font-weight: 600 }
+    .social-handle { font-size: 12px; color: var(--muted) }
 
-    .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s cubic-bezier(.2,.9,.3,1)}
-    .reveal.visible{opacity:1;transform:none}
+    .about {
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.02);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+      margin-bottom: 18px;
+    }
 
-    @media (max-width:640px){
-      .social-card{min-width:48%;}
-      .logo{width:52px;height:52px}
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .copy { color: var(--muted); font-size: 13px }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity .6s ease, transform .6s cubic-bezier(.2,.9,.3,1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Tablet View */
+    @media (max-width: 900px) {
+      .social-card {
+        flex: 1 1 45%;
+        min-width: 45%;
+      }
+    }
+
+    /* Mobile View (Logo fixed) */
+    @media (max-width: 640px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+
+      .logo {
+        width: 90px;
+        height: 90px;
+        margin: 0 auto 6px;
+        border-radius: 16px;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+
+      p.lead {
+        font-size: 13px;
+        line-height: 1.4;
+      }
+
+      .social-row {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .social-card {
+        width: 100%;
+        min-width: unset;
+        justify-content: flex-start;
+        padding: 10px 14px;
+      }
+
+      .social-icon {
+        width: 38px;
+        height: 38px;
+      }
+
+      .social-name {
+        font-size: 15px;
+      }
+
+      .social-handle {
+        font-size: 12px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <header class="reveal">
-      <div class="logo"><img src="https://i.ibb.co.com/CK6MW23R/07729e2524c6f0f5bfbac8375c1e46bc.png" alt="Clonex Logo"></div>
+      <div class="logo">
+        <img src="https://i.ibb.co.com/CK6MW23R/07729e2524c6f0f5bfbac8375c1e46bc.png" alt="Clonex Logo">
+      </div>
       <div>
         <h1>Clonex!</h1>
         <p class="lead">Stay Connected With All Our Publications On Social Media.</p>
