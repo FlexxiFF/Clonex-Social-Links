@@ -3,72 +3,85 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Clonex Esports</title>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://i.ibb.co.com/CK6MW23R/07729e2524c6f0f5bfbac8375c1e46bc.png">
-
+  <title>Clonex!</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #0b0d10;
-      --card: #0f1317;
-      --muted: #9aa3ad;
-      --accent: #00ffff;
-      --glass: rgba(255, 255, 255, 0.03);
-      --radius: 16px;
-      --max-width: 700px;
-      --gap: 18px;
+    :root{
+      --bg:#0b0d10;
+      --card:#0f1317;
+      --muted:#9aa3ad;
+      --accent:#00ffff;
+      --glass: rgba(255,255,255,0.03);
+      --radius:16px;
+      --max-width:700px;
+      --gap:18px;
       font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     }
 
-    * { box-sizing: border-box }
-    html, body { height: 100% }
-    body {
-      margin: 0;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
       background: var(--bg);
-      color: #e6eef3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 18px;
-    }
-
-    .container {
-      width: 100%;
-      max-width: var(--max-width);
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius: 20px;
-      padding: 28px;
-      box-shadow: 0 6px 30px rgba(2,6,10,0.7);
-      border: 1px solid rgba(255,255,255,0.03);
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 18px;
-    }
-
-    .logo {
-      width: 64px;
-      height: 64px;
-      border-radius: 14px;
+      color:#e6eef3;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px 18px;
+      position: relative;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    }
+
+    #background-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1;
+      opacity: 0.3;
+    }
+
+    .container{
+      width:100%;
+      max-width:var(--max-width);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:20px;
+      padding:28px;
+      box-shadow:0 6px 30px rgba(2,6,10,0.7);
+      border:1px solid rgba(255,255,255,0.03);
+      position: relative;
+      z-index: 1;
+    }
+
+    .container{
+      width:100%;
+      max-width:var(--max-width);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:20px;
+      padding:28px;
+      box-shadow:0 6px 30px rgba(2,6,10,0.7);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:18px;
+    }
+
+    .logo{
+      width:64px;height:64px;border-radius:12px;overflow:hidden;
+      display:flex;align-items:center;justify-content:center;
       animation: logoGlow 2s infinite alternate;
-      flex-shrink: 0;
     }
 
     .logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 14px;
+      width:100%;height:100%;object-fit:cover;border-radius:12px;
     }
 
     @keyframes logoGlow {
@@ -77,35 +90,23 @@
       100% { box-shadow: 0 0 8px rgba(0,255,255,0.3), 0 0 20px rgba(0,255,255,0.2) inset; }
     }
 
-    h1 { font-size: 22px; margin: 0 }
-    p.lead { margin: 0; color: var(--muted); font-size: 14px }
+    h1{font-size:22px;margin:0}
+    p.lead{margin:0;color:var(--muted);font-size:14px}
 
-    .social-row {
-      display: flex;
-      gap: var(--gap);
-      align-items: center;
-      flex-wrap: wrap;
-      margin: 22px 0 28px;
+    .social-row{
+      display:flex;gap:var(--gap);align-items:center;flex-wrap:wrap;margin:22px 0 28px;
     }
 
-    .social-card {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 16px;
-      background: var(--card);
-      border-radius: 12px;
-      cursor: pointer;
-      text-decoration: none;
-      color: inherit;
-      transition: transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s, background .28s;
-      border: 1px solid rgba(255,255,255,0.02);
-      min-width: 170px;
+    .social-card{
+      display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--card);border-radius:12px;cursor:pointer;text-decoration:none;color:inherit;
+      transition:transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s, background .28s;
+      border:1px solid rgba(255,255,255,0.02);
+      min-width:170px;
     }
 
-    .social-card:hover {
-      transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 0 12px rgba(255,255,255,0.7), 0 0 22px rgba(255,255,255,0.3);
+    .social-card:hover{
+      transform:translateY(-6px) scale(1.02);
+      box-shadow:0 0 12px rgba(255,255,255,0.7), 0 0 22px rgba(255,255,255,0.3);
       animation: glowFade 1.8s infinite alternate;
     }
 
@@ -115,115 +116,35 @@
       100% { box-shadow: 0 0 8px rgba(255,255,255,0.3), 0 0 20px rgba(255,255,255,0.2) inset; }
     }
 
-    .social-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      display: grid;
-      place-items: center;
-      background: var(--glass);
-      flex-shrink: 0;
+    .social-icon{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;background:var(--glass);flex-shrink:0}
+    .social-name{font-weight:600}
+    .social-handle{font-size:12px;color:var(--muted)}
+
+    .about{
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+      padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);
+      color:var(--muted);font-size:14px;line-height:1.45;margin-bottom:18px
     }
 
-    .social-name { font-weight: 600 }
-    .social-handle { font-size: 12px; color: var(--muted) }
+    footer{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .copy{color:var(--muted);font-size:13px}
 
-    .about {
-      background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
-      padding: 14px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.02);
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.45;
-      margin-bottom: 18px;
-    }
+    .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s cubic-bezier(.2,.9,.3,1)}
+    .reveal.visible{opacity:1;transform:none}
 
-    footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-    }
-    .copy { color: var(--muted); font-size: 13px }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(14px);
-      transition: opacity .6s ease, transform .6s cubic-bezier(.2,.9,.3,1);
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    /* Tablet View */
-    @media (max-width: 900px) {
-      .social-card {
-        flex: 1 1 45%;
-        min-width: 45%;
-      }
-    }
-
-    /* Mobile View */
-    @media (max-width: 640px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-      }
-
-      .logo {
-        width: 90px;
-        height: 90px;
-        margin: 0 auto 6px;
-        border-radius: 16px;
-      }
-
-      h1 {
-        font-size: 20px;
-      }
-
-      p.lead {
-        font-size: 13px;
-        line-height: 1.4;
-      }
-
-      .social-row {
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .social-card {
-        width: 100%;
-        min-width: unset;
-        justify-content: flex-start;
-        padding: 10px 14px;
-      }
-
-      .social-icon {
-        width: 38px;
-        height: 38px;
-      }
-
-      .social-name {
-        font-size: 15px;
-      }
-
-      .social-handle {
-        font-size: 12px;
-      }
+    @media (max-width:640px){
+      .social-card{min-width:48%;}
+      .logo{width:52px;height:52px}
     }
   </style>
 </head>
 <body>
+  <iframe id="background-video" src="https://www.youtube.com/embed/HdDN8cCHTN8?autoplay=1&mute=1&loop=1&playlist=HdDN8cCHTN8&controls=0&showinfo=0&autohide=1&modestbranding=1&rel=0" frameborder="0"></iframe>
   <div class="container">
     <header class="reveal">
-      <div class="logo">
-        <img src="https://i.ibb.co.com/CK6MW23R/07729e2524c6f0f5bfbac8375c1e46bc.png" alt="Clonex Esports Logo">
-      </div>
+      <div class="logo"><img src="https://i.ibb.co.com/CK6MW23R/07729e2524c6f0f5bfbac8375c1e46bc.png" alt="Clonex Logo"></div>
       <div>
-        <h1>Clonex Esports</h1>
+        <h1>Clonex!</h1>
         <p class="lead">Stay Connected With All Our Publications On Social Media.</p>
       </div>
     </header>
@@ -236,16 +157,13 @@
           <div class="social-handle">Join our server</div>
         </div>
       </a>
-
-      <!-- Fixed WhatsApp Button -->
-      <a href="https://chat.whatsapp.com/EsqwR8U54u06nagxVpRnHc" class="social-card reveal" target="_blank">
+      <a href="https://chat.whatsapp.com/IMjoh7wm4meAtCHvwZVl1w" class="social-card reveal" target="_blank">
         <div class="social-icon"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="28" alt="WhatsApp"></div>
         <div>
           <div class="social-name">WhatsApp</div>
           <div class="social-handle">Chat with us</div>
         </div>
       </a>
-
       <a href="https://www.facebook.com/profile.php?id=61560936631828" class="social-card reveal" target="_blank">
         <div class="social-icon"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="28" alt="Facebook"></div>
         <div>
@@ -253,7 +171,6 @@
           <div class="social-handle">Follow us</div>
         </div>
       </a>
-
       <a href="https://www.youtube.com/@ClonexOfficial" class="social-card reveal" target="_blank">
         <div class="social-icon"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" width="28" alt="YouTube"></div>
         <div>
@@ -264,12 +181,12 @@
     </nav>
 
     <div class="about reveal">
-      <strong>About Clonex Esports</strong>
+      <strong>About Clonex</strong>
       <div style="margin-top:6px">We are a united community building friendship and creativity through our Discord server. Join us and be part of something inspiring.</div>
     </div>
 
     <footer class="reveal">
-      <div class="copy">© <span id="year"></span> Clonex Esports. All rights reserved</div>
+      <div class="copy">© <span id="year"></span> Clonex! All rights reserved</div>
     </footer>
   </div>
 
@@ -285,6 +202,15 @@
       });
     },{threshold:0.08});
     reveals.forEach(r=>io.observe(r));
+
+    // Ensure video loops properly
+    const videoIframe = document.getElementById('background-video');
+    videoIframe.addEventListener('load', function() {
+      // Add additional loop handling if needed
+      setTimeout(function() {
+        videoIframe.src = videoIframe.src; // Reload if stopped
+      }, 180000); // Reload every 3 minutes to ensure continuous playback
+    });
   </script>
 </body>
 </html>
